@@ -1,0 +1,10 @@
+*.o
+*.ko
+*.order
+*.mod.*
+*.log
+*.symvers
+.lvimrc
+*.cmd
+.tmp_versions
+.vagrant

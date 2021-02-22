@@ -1,0 +1,30 @@
+found flag dataset = /home/jdoyledithencom/park-rllib/park/park/envs/multi_dim_index/data/osm_dataset_full.bin
+found flag workload = /home/jdoyledithencom/park-rllib/park/park/envs/multi_dim_index/queries.bin
+found flag projector = /home/jdoyledithencom/park-rllib/park/park/envs/multi_dim_index/mdi_layout.dat
+found flag folder = /home/jdoyledithencom/park-rllib/park/park/envs/multi_dim_index/data
+Loaded dataset and workload
+File content: 2 0 5 4 43 13 
+Learning from layout
+Finished loading CDF for dimension 0
+Finished loading CDF for dimension 5
+Finished loading CDF for dimension 4
+Layout learning 1
+Layout learning 2
+Index dim 0: range = 6345967665, offset = 666
+Index dim 5: range = 26, offset = 1
+Index dim 4: range = 3, offset = 1
+Done learning from layout
+Sorting data...
+Boundaries: 129 of 559 cells have data
+Time to sort and finalize data: 7.16624s
+Compressed column 0 to 196717426 bytes with 205727 blocks 
+Compressed column 1 to 270593966 bytes with 205727 blocks 
+Compressed column 2 to 269011178 bytes with 205727 blocks 
+Compressed column 3 to 281657251 bytes with 205727 blocks 
+Compressed column 4 to 10697 bytes with 205727 blocks 
+Compressed column 5 to 2690456 bytes with 205727 blocks 
+Dataset size: 1060180558 bytes
+Compression time: 15.8506s
+Index size: 23212 bytes
+Index creation time: 10.2548s
+Running queries...
