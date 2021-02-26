@@ -2,7 +2,7 @@
 to bakcup data folder when necessary
 source: https://www.geeksforgeeks.org/working-zip-files-python/
 """
-from zipfile import ZipFile 
+from zipfile import ZipFile
 import os
 import sys
 import argparse
@@ -11,11 +11,12 @@ import argparse
 project_dir = os.path.dirname(os.path.join(os.getcwd(), __file__))
 sys.path.append(os.path.normpath(os.path.join(project_dir, '..', '..')))
 
-from experiments_scripts.utils.constants import (DATASETS_PATH,
-                                                 RESULTS_PATH,
-                                                 DATA_PATH,
-                                                 PROJECT_PATH
-                                                 )
+from experiments_scripts.utils.constants import (
+    DATASETS_PATH,
+    RESULTS_PATH,
+    DATA_PATH,
+    BACKUP_PATH
+)
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--backup', type=str, default='dataset')
@@ -43,13 +44,13 @@ def main():
     # path to folder which needs to be zipped
     if args.backup == 'dataset':
         directory = DATASETS_PATH
-        saved_file_path = os.path.join(PROJECT_PATH, 'dataset.zip')
+        saved_file_path = os.path.join(BACKUP_PATH, 'dataset.zip')
     elif args.backup == 'results':
         directory = RESULTS_PATH
-        saved_file_path = os.path.join(PROJECT_PATH, 'results.zip')
+        saved_file_path = os.path.join(BACKUP_PATH, 'results.zip')
     elif args.backup == 'data':
         directory = DATA_PATH
-        saved_file_path = os.path.join(PROJECT_PATH, 'data.zip')
+        saved_file_path = os.path.join(BACKUP_PATH, 'data.zip')
     else:
         raise ValueError(f"invalid input for backup {args.backup}")
     # calling function to get all file paths in the directory
@@ -59,7 +60,6 @@ def main():
     print('Following files will be zipped:')
     for file_name in file_paths:
         print(file_name)
-
 
     # writing files to a zipfile
     with ZipFile(saved_file_path, 'w') as zip:
