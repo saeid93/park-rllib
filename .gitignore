@@ -189,3 +189,11 @@ jobs.sh
 # large files
 park_region_assignment.json.gz
 park/park/envs/multi_dim_index/exec/mdi_db
+
+# abr env
+# abr_browser_dir
+# cooked_traces
+# selenium-2.39.0
+# video_server
+# google-chrome-stable_current_amd64.deb
+
