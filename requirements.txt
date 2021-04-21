@@ -1,0 +1,7 @@
+click==7.1.2
+tqdm==4.52.0
+GPUtil==1.4.0
+matplotlib==3.3.3
+tensorboard==2.4.0
+tensorboardX==2.1
+ray[rllib]
