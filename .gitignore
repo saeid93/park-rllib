@@ -175,7 +175,7 @@ cmake-build-*/
 
 # my ignores
 ~
-data
+results
 
 # vscode
 .devcontainer

@@ -11,17 +11,13 @@ import pprint
 project_dir = os.path.dirname(os.path.join(os.getcwd(), __file__))
 sys.path.append(os.path.normpath(os.path.join(project_dir, '..', '..')))
 
-from experiments_scripts.utils.constants import (
-    RESULTS_PATH,
-    RESULTS_PATH_EXPERIMENTS,
-)
-from experiments_scripts.utils.callbacks import CustomCallback
-from experiments_scripts.utils.params import (
-    parser,
+from experiments.utils.constants import RESULTS_PATH
+from experiments.utils.callbacks import CustomCallback
+from experiments.utils.params import (
     config,
     config_file_path
 )
-from experiments_scripts.utils.choose_cls import env_class
+from experiments.utils.choose_cls import env_class
 
 torch, nn = try_import_torch()
 
@@ -70,15 +66,7 @@ def learner():
     ray_config = {'env': env_class(config.type_env)
                   ,'env_config': {}}
 
-    # <----- generate the path ----->
-    # folder formats: <environmet>
-    if config.mode == 'experimental':
-        result_folder = RESULTS_PATH_EXPERIMENTS
-    elif config.mode == 'real':
-        result_folder = RESULTS_PATH
-    else:
-        raise ValueError('unknwon expriment mode')
-    experiments_folder = os.path.join(result_folder,
+    experiments_folder = os.path.join(RESULTS_PATH,
                                       "series",     str(config.series),
                                       "envs",       str(config.type_env),
                                       "experiments")

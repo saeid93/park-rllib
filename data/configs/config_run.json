@@ -1,0 +1,25 @@
+{
+    "notes": "same as 10",
+    "run_or_experiment": "PPO",
+    "learn_config": {
+        "num_gpus": 0,
+        "num_workers": 1,
+        "lr": 5e-5,
+        "model": {
+            "fcnet_hiddens": [
+                40,
+                40,
+                20,
+                20
+            ]
+        },
+        "framework": "torch",
+        "rollout_fragment_length": 200,
+        "train_batch_size": 400,
+        "sgd_minibatch_size": 100,
+        "num_sgd_iter": 20
+    },
+    "stop": {
+        "training_iteration": 1000
+    }
+}

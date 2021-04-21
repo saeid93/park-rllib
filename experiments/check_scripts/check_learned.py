@@ -13,12 +13,12 @@ import ray.rllib.agents.pg as pg
 project_dir = os.path.dirname(os.path.join(os.getcwd(), __file__))
 sys.path.append(os.path.normpath(os.path.join(project_dir, '..', '..')))
 
-from experiments_scripts.utils.constants import (
+from experiments.utils.constants import (
     RESULTS_PATH,
     CONFIGS_PATH
 )
-from experiments_scripts.utils.data_reader import env_config_builder
-from experiments_scripts.utils.helpers import (
+from experiments.utils.data_reader import env_config_builder
+from experiments.utils.helpers import (
     make_env,
     action_pretty_print
 )

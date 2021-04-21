@@ -11,7 +11,7 @@ import sys
 project_dir = os.path.dirname(os.path.join(os.getcwd(), __file__))
 sys.path.append(os.path.normpath(os.path.join(project_dir, '..', '..')))
 
-from experiments_scripts.utils.constants import DATASETS_PATH
+from experiments.utils.constants import DATASETS_PATH
 
 
 # def env_config_builder(dataset_id, workload_id):

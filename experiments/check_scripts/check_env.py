@@ -28,7 +28,7 @@ class CheckScripts:
         11. spark
 
         """
-        self.env = park.make('region_assignment')
+        self.env = park.make('abr_sim')
 
     def check_env(self):
         i = 0

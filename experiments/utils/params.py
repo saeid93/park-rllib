@@ -8,12 +8,10 @@ from park.param import parser
 project_dir = os.path.dirname(os.path.join(os.getcwd(), __file__))
 sys.path.append(os.path.normpath(os.path.join(project_dir, '..', '..')))
 
-from experiments_scripts.utils.constants import CONFIGS_PATH
+from experiments.utils.constants import CONFIGS_PATH
 
 
 # -- Basic --
-parser.add_argument('--mode', type=str, default='experimental',
-                    help='mode of the experiments')
 parser.add_argument('--local_mode', type=bool, default=True,
                     help='whether activate the local mode of rllib or not')
 parser.add_argument('--config_folder', type=str, default='',
@@ -31,7 +29,7 @@ parser.add_argument('--checkpoint_freq', type=int, default=100,
 config, _ = parser.parse_known_args()
 
 # read the config file
-config_file_path = os.path.join(CONFIGS_PATH, config.mode,
+config_file_path = os.path.join(CONFIGS_PATH,
                                 config.config_folder,
                                 "config_run.json")
 with open(config_file_path) as cf:
